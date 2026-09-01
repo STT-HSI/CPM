@@ -1,0 +1,9 @@
+numpy
+scipy
+scikit-learn
+h5py
+matplotlib
+torch
+tensorboard
+transformers
+peft

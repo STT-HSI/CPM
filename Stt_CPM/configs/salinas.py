@@ -1,0 +1,51 @@
+config = {
+    "method_name": "CPM",
+    "dataset_slug": 'salinas',
+    "dataset_display_name": 'Salinas',
+    "dataset_root": "datasets",
+    "source_dataset_file": "chikusei/chikusei_source_patches_128bands_7x7.pkl",
+    "target_image_file": 'salinas/salinas_hyperspectral_image.mat',
+    "target_ground_truth_file": 'salinas/salinas_ground_truth.mat',
+    "target_image_mat_key": 'salinas_corrected',
+    "target_ground_truth_mat_key": 'salinas_gt',
+    "gpu_id": 0,
+    "log_directory": "logs",
+    "classification_map_directory": "outputs/classification_maps",
+    "tsne_directory": "visualizations/tsne",
+    "pretrained_model_path": "pretrained_models/all-mpnet-base-v2",
+
+    "patch_size": 7,
+    "num_training_episodes": 5000,
+    "learning_rate": 1e-3,
+    "weight_decay": 1e-4,
+
+    "embedding_dimension": 128,
+    "source_spectral_dimension": 128,
+    "target_spectral_dimension": 204,
+    "shared_spectral_dimension": 100,
+
+    "episode_support_samples_per_class": 1,
+    "episode_query_samples_per_class": 19,
+    "target_class_count": 16,
+    "target_labeled_samples_per_class": 5,
+
+    "label_prior_dimension": 19,
+    "lcp_noise_std": 0.001,
+    "cra_loss_weight": 1.5,
+    "cra_temperature": 0.03,
+
+    "prompt_virtual_tokens": 2,
+    "text_hidden_dimension": 768,
+    "prompt_attention_heads": 12,
+    "prompt_layers": 12,
+    "semantic_projection_dropout": 0.3,
+
+    "evaluation_interval": 500,
+    "log_interval": 100,
+    "num_experiment_runs": 10,
+    "seeds": [1010, 1214, 1227, 1237, 1240, 3003, 3918, 6226, 6938, 8505],
+
+    "source_category_names": ['water', 'bare soil school', 'bare soil park', 'bare soil farmland', 'natural plants', 'weeds in farmland', 'forest', 'grass', 'rice field grown', 'rice field first stage', 'row crops', 'plastic house', 'manmade non dark', 'manmade dark', 'manmade blue', 'manmade red', 'manmade grass', 'asphalt'],
+    "target_category_names": ['Brocoli green weeds 1', 'Brocoli green weeds 2', 'Fallow', 'Fallow rough plow', 'Fallow smooth', 'Stubble', 'Celery', 'Grapes untrained', 'Soil vinyard develop', 'Corn senesced green weeds', 'Lettuce romaine 4wk', 'Lettuce romaine 5wk', 'Lettuce romaine 6wk', 'Lettuce romaine 7wk', 'Vinyard untrained', 'Vinyard vertical trellis'],
+    "class_colors": [[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 1], [1, 0, 0], [1, 0, 1], [1, 1, 0], [0.5, 0.5, 1], [0.65, 0.35, 1], [0.75, 0.5, 0.75], [0.75, 1, 0.5], [0.5, 1, 0.65], [0.65, 0.65, 0], [0.75, 1, 0.65], [0, 0, 0.5], [0, 1, 0.75], [0.5, 0.75, 1]],
+}

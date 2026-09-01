@@ -1,0 +1,51 @@
+config = {
+    "method_name": "CPM",
+    "dataset_slug": 'indian_pines',
+    "dataset_display_name": 'Indian Pines',
+    "dataset_root": "datasets",
+    "source_dataset_file": "chikusei/chikusei_source_patches_128bands_7x7.pkl",
+    "target_image_file": 'indian_pines/indian_pines_hyperspectral_image.mat',
+    "target_ground_truth_file": 'indian_pines/indian_pines_ground_truth.mat',
+    "target_image_mat_key": 'indian_pines_corrected',
+    "target_ground_truth_mat_key": 'indian_pines_gt',
+    "gpu_id": 0,
+    "log_directory": "logs",
+    "classification_map_directory": "outputs/classification_maps",
+    "tsne_directory": "visualizations/tsne",
+    "pretrained_model_path": "pretrained_models/all-mpnet-base-v2",
+
+    "patch_size": 7,
+    "num_training_episodes": 5000,
+    "learning_rate": 1e-3,
+    "weight_decay": 1e-4,
+
+    "embedding_dimension": 128,
+    "source_spectral_dimension": 128,
+    "target_spectral_dimension": 200,
+    "shared_spectral_dimension": 100,
+
+    "episode_support_samples_per_class": 1,
+    "episode_query_samples_per_class": 19,
+    "target_class_count": 16,
+    "target_labeled_samples_per_class": 5,
+
+    "label_prior_dimension": 19,
+    "lcp_noise_std": 0.005,
+    "cra_loss_weight": 1.0,
+    "cra_temperature": 0.05,
+
+    "prompt_virtual_tokens":2,
+    "text_hidden_dimension": 768,
+    "prompt_attention_heads": 12,
+    "prompt_layers": 12,
+    "semantic_projection_dropout": 0.3,
+
+    "evaluation_interval": 500,
+    "log_interval": 100,
+    "num_experiment_runs": 10,
+    "seeds": [1222, 1223, 1227, 1236, 1237, 3003, 5241, 6242, 6938, 7960],
+
+    "source_category_names": ['water', 'bare soil school', 'bare soil park', 'bare soil farmland', 'natural plants', 'weeds in farmland', 'forest', 'grass', 'rice field grown', 'rice field first stage', 'row crops', 'plastic house', 'manmade non dark', 'manmade dark', 'manmade blue', 'manmade red', 'manmade grass', 'asphalt'],
+    "target_category_names": ['Alfalfa', 'Corn notill', 'Corn mintill', 'Corn', 'Grass pasture', 'Grass trees', 'Grass pasture mowed', 'Hay windrowed', 'Oats', 'Soybean notill', 'Soybean mintill', 'Soybean clean', 'Wheat', 'Woods', 'Buildings Grass Trees Drives', 'Stone Steel Towers'],
+    "class_colors": [[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 1], [1, 0, 0], [1, 0, 1], [1, 1, 0], [0.5, 0.5, 1], [0.65, 0.35, 1], [0.75, 0.5, 0.75], [0.75, 1, 0.5], [0.5, 1, 0.65], [0.65, 0.65, 0], [0.75, 1, 0.65], [0, 0, 0.5], [0, 1, 0.75], [0.5, 0.75, 1]],
+}

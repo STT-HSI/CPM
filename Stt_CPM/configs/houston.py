@@ -1,0 +1,51 @@
+config = {
+    "method_name": "CPM",
+    "dataset_slug": 'houston',
+    "dataset_display_name": 'Houston',
+    "dataset_root": "datasets",
+    "source_dataset_file": "chikusei/chikusei_source_patches_128bands_7x7.pkl",
+    "target_image_file": 'houston/houston_hyperspectral_image.mat',
+    "target_ground_truth_file": 'houston/houston_ground_truth.mat',
+    "target_image_mat_key": 'Houston',
+    "target_ground_truth_mat_key": 'Houston_gt',
+    "gpu_id": 0,
+    "log_directory": "logs",
+    "classification_map_directory": "outputs/classification_maps",
+    "tsne_directory": "visualizations/tsne",
+    "pretrained_model_path": "pretrained_models/all-mpnet-base-v2",
+
+    "patch_size": 7,
+    "num_training_episodes": 5000,
+    "learning_rate": 1e-3,
+    "weight_decay": 1e-4,
+
+    "embedding_dimension": 128,
+    "source_spectral_dimension": 128,
+    "target_spectral_dimension": 144,
+    "shared_spectral_dimension": 100,
+
+    "episode_support_samples_per_class": 1,
+    "episode_query_samples_per_class": 19,
+    "target_class_count": 15,
+    "target_labeled_samples_per_class": 5,
+
+    "label_prior_dimension": 19,
+    "lcp_noise_std": 0.01,
+    "cra_loss_weight": 2.5,
+    "cra_temperature": 0.03,
+
+    "prompt_virtual_tokens": 2,
+    "text_hidden_dimension": 768,
+    "prompt_attention_heads": 12,
+    "prompt_layers": 12,
+    "semantic_projection_dropout": 0.3,
+
+    "evaluation_interval": 500,
+    "log_interval": 100,
+    "num_experiment_runs": 10,
+    "seeds": [1222, 1227, 2623, 3244, 5624, 6921, 6938, 7967, 8311, 8505],
+
+    "source_category_names": ['water', 'bare soil school', 'bare soil park', 'bare soil farmland', 'natural plants', 'weeds in farmland', 'forest', 'grass', 'rice field grown', 'rice field first stage', 'row crops', 'plastic house', 'manmade non dark', 'manmade dark', 'manmade blue', 'manmade red', 'manmade grass', 'asphalt'],
+    "target_category_names": ['Healthy grass', 'Stressed grass', 'Synthetic grass', 'Trees', 'Soil', 'Water', 'Residential', 'Commercial', 'Road', 'Highway', 'Railway', 'Parking Lot 1', 'Parking Lot 2', 'Tennis Court', 'Running Track'],
+    "class_colors": [[0, 0, 0], [0.77, 0.87, 0.7], [0.43, 0.67, 0.27], [0.32, 0.5, 0.2], [0.21, 0.34, 0.13], [0.77, 0.35, 0.06], [0, 0.69, 0.94], [0.75, 0, 0], [0.7, 0.78, 0.9], [0.48, 0.48, 0.48], [0.95, 0.69, 0.51], [0.97, 0.79, 0.67], [0.34, 0.34, 0.34], [0.8, 0.8, 0], [0, 0.8, 0.4], [1, 0, 0]],
+}
